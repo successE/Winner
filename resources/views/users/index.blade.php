@@ -6,11 +6,9 @@
  <h1>所有用户</h1>
  <url class="users">
   @foreach($users as $user)
-   <li>
-    <img src="{{ $user->gravatar()}}" alt="{{ $user->name }}" title="{{ $user->name}}" class="gravatar" />
-    <a href="{{ route('users.show',$user->id)}}" class="username">{{$user->name }}</a>
-   </li>
+    @include('users._user')
    @endforeach
  </url>
+ {!! $users->render() !!}
 </div>
 @stop
